@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopNest – The Cozy Corner for Bedroom Producers</title>
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#111;background:#fefefe;}
+        a{text-decoration:none;color:inherit;}
+        img{max-width:100%;display:block;}
+        button{cursor:pointer;border:none;background:none;font:inherit;}
+
+        /* ---------- NAV ---------- */
+        header{
+            background:#0d0d0d;
+            color:#fff;
+            padding:.75rem 1rem;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+        nav{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            max-width:1100px;
+            margin:auto;
+        }
+        .brand{
+            font-weight:700;
+            font-size:1.25rem;
+            letter-spacing:.5px;
+        }
+        nav ul{
+            list-style:none;
+            display:flex;
+            flex-wrap:wrap;
+            gap:.75rem 1.25rem;
+        }
+        nav a{
+            color:#ccc;
+            font-size:.9rem;
+            transition:color .2s;
+        }
+        nav a:hover{color:#fff;}
+
+        /* ---------- MAIN PAGE SECTIONS ---------- */
+        section{
+            padding:3.5rem 1rem;
+            max-width:1100px;
+            margin:auto;
+        }
+        .hero{
+            text-align:center;
+            background:#f2f2f2;
+        }
+        .hero h1{
+            font-size:2.2rem;
+            margin-bottom:.75rem;
+        }
+        .hero p{
+            max-width:600px;
+            margin:auto auto 1.25rem;
+            color:#444;
+        }
+        .cta-btn{
+            display:inline-block;
+            background:#111;
+            color:#fff;
+            padding:.75rem 1.5rem;
+            border-radius:4px;
+            transition:background .2s;
+        }
+        .cta-btn:hover{background:#333;}
+
+        .reviews{
+            display:grid;
+            gap:1.25rem;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        }
+        .review-card{
+            background:#fff;
+            border:1px solid #e6e6e6;
+            padding:1.25rem;
+            border-radius:6px;
+            font-size:.9rem;
+        }
+        .review-card strong{display:block;margin-bottom:.35rem;}
+
+        .social{
+            text-align:center;
+            padding:2.5rem 1rem;
+        }
+        .social a{
+            margin:0 .5rem;
+            font-size:1.4rem;
+            color:#111;
+            transition:color .2s;
+        }
+        .social a:hover{color:#666;}
+
+        /* ---------- SUB PAGES ---------- */
+        .page{display:none;}
+        .page.active{display:block;}
+
+        /* ---------- FOOTER ---------- */
+        footer{
+            background:#0d0d0d;
+            color:#ccc;
+            text-align:center;
+            padding:1.5rem 1rem;
+            font-size:.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<header>
+    <nav>
+        <div class="brand">LoopNest</div>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('advice')">Advice from Peers</a></li>
+            <li><a href="#" onclick="showPage('sequencer')">Step Sequencer</a></li>
+            <li><a href="#" onclick="showPage('dj')">DJ Studio App</a></li>
+            <li><a href="#" onclick="showPage('producer')">Music Producer App</a></li>
+            <li><a href="#" onclick="showPage('lyrics')">Lyrics Writing</a></li>
+            <li><a href="#" onclick="showPage('stories')">Success Stories</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main>
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Your sound, your space, your story.</h1>
+            <p>LoopNest is the tiny virtual studio built for beat-makers who hate complexity and love fast ideas. No log-ins, no subscriptions—just open a tab and start looping.</p>
+            <a href="#" class="cta-btn" onclick="showPage('sequencer')">Try the Step Sequencer</a>
+        </div>
+
+        <section style="margin-top:3rem;">
+            <h2 style="text-align:center;margin-bottom:1.5rem;">What producers are saying</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <strong>@luna_beats</strong>
+                    “Finally a sequencer that doesn’t crash my old laptop. Exported my loop in 30 seconds flat.”
+                </div>
+                <div class="review-card">
+                    <strong>K-90</strong>
+                    “I sketch all my grime ideas here before touching Ableton. Zero bloat, pure flow.”
+                </div>
+                <div class="review-card">
+                    <strong>tiny808</strong>
+                    “The built-in advice board saved me from buying gear I didn’t need. Community &gt; marketing.”
+                </div>
+            </div>
+        </section>
+
+        <div class="social">
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Discord">💬</a>
+            <a href="#" aria-label="YouTube">📺</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+        <h2>About LoopNest</h2>
+        <p>LoopNest started in a Sheffield bedroom in 2021 after a broken audio interface left the founder with nothing but stock drums and a web browser. The goal: make the fastest, lightest sketchpad for rhythm ideas. Everything else—log-ins, paywalls, 3-gigabyte sample packs—got stripped away.</p>
+        <p>We stay independent, funded by small donations and sticker sales. No investors, no data mining, no dark patterns. Just loops.</p>
+    </section>
+
+    <!-- ADVICE -->
+    <section id="advice" class="page">
+        <h2>Advice from Peers</h2>
+        <article>
+            <h3>Stop overthinking your mix—finish the loop.</h3>
+            <p>User @grayfield: “I used to EQ hi-hats for three hours. Now I force myself to bounce at the 16-bar mark. Ear fatigue is real; momentum beats perfection.”</p>
+        </article>
+        <article style="margin-top:1.5rem;">
+            <h3>One synth, one vibe.</h3>
+            <p>User @sasha_portable: “Pick a single soft-synth and make 30 presets. Limitations breed identity. Listeners don’t care about your plugin folder.”</p>
+        </article>
+    </section>
+
+    <!-- SEQUENCER -->
+    <section id="sequencer" class="page">
+        <h2>Step Sequencer</h2>
+        <p>16-step grid, 8 channels, export to WAV. Works offline once loaded. Keyboard shortcuts: spacebar = play, 1-8 = mute/solo channels.</p>
+        <div style="background:#111;color:#0f0;font-family:monospace;padding:1.5rem;border-radius:6px;margin-top:1rem;">
+            [Sequencer UI placeholder – wire up your JS drum machine here]
+        </div>
+    </section>
+
+    <!-- DJ STUDIO APP -->
+    <section id="dj" class="page">
+        <h2>DJ Studio App</h2>
+        <p>Two-deck browser mixer with automatic BPM detection, filter knobs and a tiny samplers rack. Drag any local file and start blending. No crate digging required.</p>
+    </section>
+
+    <!-- PRODUCER APP -->
+    <section id="producer" class="page">
+        <h2>Music Producer App</h2>
+        <p>Piano-roll, automation lanes, vintage-style step modulation and one-knob “glue” bus compressor. Export stems or Ableton project file. macOS/Win/Linux builds available.</p>
+    </section>
+
+    <!-- LYRICS -->
+    <section id="lyrics" class="page">
+        <h2>Lyrics Writing Room</h2>
+        <p>Distraction-free pad with built-in rhyme suggester and syllable counter. Toggle “rap mode” to highlight multis or “pop mode” for vowel matching. Saves to browser storage automatically.</p>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section id="stories" class="page">
+        <h2>Success Stories</h2>
+        <article>
+            <h3>From LoopNest to Netflix trailer</h3>
+            <p>Producer “Hiber-Nate” sketched a cinematic trap loop on LoopNest, imported it into Logic, added strings, and landed a sync placement for a 2024 sci-fi series trailer. His advice: “Never delete your 8-bar sketches.”</p>
+        </article>
+        <article style="margin-top:1.5rem;">
+            <h3>Platinum remix born in a lunch break</h3>
+            <p>Tokyo-based @itgirl remixed a K-pop vocal using only the Step Sequencer during her lunch hour. The demo hit Twitter; two weeks later the official remix went platinum in Korea.</p>
+        </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+        <h2>Contact Us</h2>
+        <p>Email: hello@loopnest.app</p>
+        <p>Post: LoopNest, P.O. Box 382, Sheffield, S1 4DU, UK</p>
+        <p>For bugs: open an issue on our public GitHub repo (link in footer).</p>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    &copy; <span id="year"></span> LoopNest – open-source beats forever.
+</footer>
+
+<!-- ================= JS NAV HELPER ================= -->
+<script>
+    function showPage(id){
+        document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
